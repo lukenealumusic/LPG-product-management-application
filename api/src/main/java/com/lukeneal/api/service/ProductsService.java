@@ -25,7 +25,8 @@ public class ProductsService {
             ProductDto productDto = new ProductDto();
             productDto.setProductName(product.getName());
             productDto.setDescription(product.getDescription());
-            productDto.setCategoryName(product.getCategory().getName());
+            //TODO fix jpa manytoone association
+            //productDto.setCategoryName(product.getCategory().getName());
             productDtos.add(productDto);
         }
 

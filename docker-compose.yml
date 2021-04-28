@@ -1,19 +1,6 @@
 version: '3.3'
 
 services:
-#  db:
-#    image: mysql:5.7.24
-#    restart: always
-#    environment:
-#      MYSQL_DATABASE: 'db'
-#      MYSQL_USER: 'user'
-#      MYSQL_PASSWORD: 'password'
-#      MYSQL_ROOT_PASSWORD: 'password'
-#    ports:
-#      - '3306:3306'
-#    expose:
-#      - '3306'
-#
 
   db:
     container_name: local-mysql
@@ -29,7 +16,7 @@ services:
     ports:
       - "3600:3306"
     healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-u", "root", "-p01Music", "--silent"]
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-u", "root", "--silent"]
       timeout: 20s
       retries: 10
     command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_general_ci', '--explicit_defaults_for_timestamp','--lower_case_table_names=1','--sql_mode=NO_ENGINE_SUBSTITUTION']
