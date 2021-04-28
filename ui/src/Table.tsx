@@ -28,11 +28,28 @@ function createData(
     return { name, description, category};
 }
 
-const rows: any = [
-    createData('Cupcake', 'Food', 'Category'),
-    createData('Donut', 'Food', 'Category'),
-    createData('Eclair', 'Food', 'Category'),
+
+let rows: any = [
+
 ];
+
+state = {
+    data: {}
+};
+
+
+fetchData = async query => {
+    let url = ``;
+
+    const response = await fetch(url);
+    const result = response.json();
+
+    this.setState({
+        data: {
+            data: result.data,
+        }
+    });
+};
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
     if (b[orderBy] < a[orderBy]) {

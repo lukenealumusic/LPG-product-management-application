@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Service
 public class ProductsService {
@@ -20,16 +19,13 @@ public class ProductsService {
     public List<ProductDto> getAllProducts(){
         List<ProductDto> productDtos = new ArrayList<>();
 
-        Set<Product> products = productsRepository.getAllProducts();
+        List<Product> products = productsRepository.getAllProducts();
 
         for(Product product: products){
             ProductDto productDto = new ProductDto();
             productDto.setProductName(product.getName());
             productDto.setDescription(product.getDescription());
-            //productDto.setCategoryName(product.getCategory().getName());
-            productDto.setCreationDate(product.getCreationDate());
-            //productDto.setUpdatedDate(product.getUpdatedDate());
-            productDto.setLastPurchasedDate(product.getLastPurchasedDate());
+            productDto.setCategoryName(product.getCategory().getName());
             productDtos.add(productDto);
         }
 

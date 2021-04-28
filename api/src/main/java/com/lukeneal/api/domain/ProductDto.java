@@ -10,12 +10,6 @@ public class ProductDto {
 
     private String categoryName;
 
-    private String creationDate;
-
-    private String updatedDate;
-
-    private String lastPurchasedDate;
-
     public String getProductName() {
         return productName;
     }
@@ -40,27 +34,4 @@ public class ProductDto {
         this.categoryName = categoryName;
     }
 
-    public String getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(String creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public String getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(String updatedDate) {
-        this.updatedDate = updatedDate;
-    }
-
-    public String getLastPurchasedDate() {
-        return lastPurchasedDate;
-    }
-
-    public void setLastPurchasedDate(String lastPurchasedDate) {
-        this.lastPurchasedDate = lastPurchasedDate;
-    }
 }

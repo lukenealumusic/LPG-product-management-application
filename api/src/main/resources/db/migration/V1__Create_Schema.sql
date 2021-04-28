@@ -2,7 +2,7 @@ create table category
 (
     id          bigint not null
         primary key,
-    name        varchar(255) null
+    name        varchar(255) not null
 );
 
 

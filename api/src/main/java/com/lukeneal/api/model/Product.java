@@ -2,7 +2,6 @@ package com.lukeneal.api.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
 public class Product implements Serializable {
@@ -17,12 +16,12 @@ public class Product implements Serializable {
     @Column
     private String description;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
 
 
-    // Note: I have made these date fields type String for time's sake. The insert data needs formatting correctly to insert as a Date.
+    // Note: I have made these date fields type String for time's sake. The data needs formatting correctly to insert as a Date.
     @Column
     private String creationDate;
 

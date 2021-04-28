@@ -10,4 +10,13 @@ function App() {
   );
 }
 
+// function componentDidMount() {
+//     fetch('http://localhost:8080/api/products/get-all-products')
+//         .then(res => res.json())
+//         .then((data) => {
+//             let d  = data;
+//         })
+//         .catch(console.log)
+// }
+
 export default App;
